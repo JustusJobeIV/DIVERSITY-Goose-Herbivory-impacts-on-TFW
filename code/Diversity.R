@@ -8,7 +8,7 @@ library(dplyr)
 library(emmeans)
 
 
-NACE_Herb<-read.csv("~/Desktop/R Projects/NACE PROJECT/Diversity_Manuscript_RCode/raw_data/NACE herbivory study 2009_2021 veg data 21jul21.csv")
+NACE_Herb<-read.csv("~/Desktop/R Projects/NACE PROJECT/Diversity_Manuscript_RCode/raw_data/NACE_Herbivory_Study_2009_2015.csv")
 
 ##Clear out N/A
 NACE_Herb<-na.omit(NACE_Herb)
@@ -19,8 +19,7 @@ NACE_Herb<-NACE_Herb[,-9]
 NACE_June2009=filter(NACE_Herb, (month %in% c("JUN")))
 NACE_June2009= filter(NACE_June2009,(year %in% "2009"))
 
-#### Remove data from 2016-2021####
-NACE_Herb_Div = filter(NACE_Herb, (year %in% c("2009", "2010","2011","2012","2013","2014","2015")))
+#### Remove June data ####
 NACE_Herb_Div =filter(NACE_Herb_Div, (month %in% c("AUG")))
 
 ##Combine both dataframes
