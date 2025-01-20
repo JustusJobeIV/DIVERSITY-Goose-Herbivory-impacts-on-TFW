@@ -345,9 +345,18 @@ stat.test.annual2
 
 
 
+#### Goose Population #####
 
 
+Goose_Pop<-read.csv("~/Desktop/R Projects/NACE PROJECT/NACE-2023-full-report/raw_data/Goose_Pop.csv")
 
+png(filename="figures/Goose_Count.png", width = 12*ppi, height= 8*ppi, res = ppi)
+x=ggbarplot(Goose_Pop, "Year", "Population",
+             fill = "steelblue", color = "steelblue", ylab="Resident Canada Goose Count")
+  
+  x+theme(axis.text.x =element_blank() , axis.ticks.x =element_blank(),axis.text.y =element_text(size=20))
+
+dev.off()
 
 
 
